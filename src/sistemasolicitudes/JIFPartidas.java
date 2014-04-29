@@ -352,7 +352,7 @@ public class JIFPartidas extends javax.swing.JInternalFrame {
             }
         });
 
-        btnCancelar.setBackground(new java.awt.Color(255, 0, 0));
+        btnCancelar.setBackground(new java.awt.Color(224, 209, 104));
         btnCancelar.setText("Cancelar");
         btnCancelar.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -396,7 +396,7 @@ public class JIFPartidas extends javax.swing.JInternalFrame {
 
         tabbedPaneHeader2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(176, 177, 178)));
 
-        btnGuardar.setBackground(new java.awt.Color(255, 197, 0));
+        btnGuardar.setBackground(new java.awt.Color(255, 0, 0));
         btnGuardar.setText("Guardar Datos");
         btnGuardar.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -414,7 +414,7 @@ public class JIFPartidas extends javax.swing.JInternalFrame {
             }
         });
 
-        btnImprimir.setBackground(new java.awt.Color(255, 197, 0));
+        btnImprimir.setBackground(new java.awt.Color(255, 0, 0));
         btnImprimir.setText("Imprimir");
         btnImprimir.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         btnImprimir.addActionListener(new java.awt.event.ActionListener() {

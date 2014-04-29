@@ -318,7 +318,7 @@ public class JIFExpedienteArchivado extends javax.swing.JInternalFrame {
         });
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Re-Imprimir Solicitud");
+        jButton1.setText("Re-Imprimir");
         jButton1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -373,7 +373,7 @@ public class JIFExpedienteArchivado extends javax.swing.JInternalFrame {
 
         tabbedPaneHeader2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        btnGuardar.setBackground(new java.awt.Color(255, 197, 0));
+        btnGuardar.setBackground(new java.awt.Color(255, 0, 0));
         btnGuardar.setText("Guardar Datos");
         btnGuardar.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -390,7 +390,7 @@ public class JIFExpedienteArchivado extends javax.swing.JInternalFrame {
             }
         });
 
-        btnImprimir.setBackground(new java.awt.Color(255, 197, 0));
+        btnImprimir.setBackground(new java.awt.Color(255, 0, 0));
         btnImprimir.setText("Imprimir");
         btnImprimir.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         btnImprimir.addActionListener(new java.awt.event.ActionListener() {
@@ -399,7 +399,7 @@ public class JIFExpedienteArchivado extends javax.swing.JInternalFrame {
             }
         });
 
-        btnCancelar.setBackground(new java.awt.Color(255, 0, 0));
+        btnCancelar.setBackground(new java.awt.Color(229, 208, 121));
         btnCancelar.setText("Cancelar");
         btnCancelar.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -787,7 +787,7 @@ public class JIFExpedienteArchivado extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_buttonColoredAction1ActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-              cod = lblCod.getText();
+        cod = lblCod.getText();
         idsol =Integer.parseInt(lblIdSol.getText());
         int codTipSol=5;
         //
@@ -819,16 +819,50 @@ public class JIFExpedienteArchivado extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(rootPane, "Error Guardando. " + e);
         }
         }
-
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnCambiarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarDatosActionPerformed
- 
+         cod = this.lblCod.getText();
+        idsol =Integer.parseInt(lblIdSol.getText());
+
+        num_solicitud = this.txtSolicitud.getText();
+        idSol = this.LabelIdSol.getText();
+        exped = txtExped.getText().toUpperCase();
+        not=Integer.parseInt(String.valueOf(cboxNotario.getSelectedIndex()));
+        otor = txtOtor.getText().toUpperCase();
+        favor = txtFavor.getText().toUpperCase();
+        juz = this.txtJuz.getText().toUpperCase();
+        seguido = txtSeguido.getText().toUpperCase();
+        contra = txtContra.getText().toUpperCase();
+        dia = this.txtdia.getText().toUpperCase();
+        mes = this.cboxMes.getSelectedItem().toString();
+        año = txtAño.getText().toUpperCase();
+        otros = txtObs.getText().toUpperCase();
+        if(not==0){
+            codigoNotario = "113";
+        }
+        
+        int rpta1 = JOptionPane.showConfirmDialog(rootPane,"¿Esta seguro de realizar estos cambios?","ARP Sistema",JOptionPane.YES_NO_OPTION);
+        if(rpta1 == 0){
+            try{
+                con.conectar();
+                con.actualizar("UPDATE `recepcion`.`exparchivado` SET `tipExp`='"+exped+"', `codNot`='"+codigoNotario+"', `otorgante`='"+otor+"', `favorecido`='"+favor+"', `juzgado`='"+juz+"', `seguido`='"+seguido+"', `contra`='"+contra+"', `dia`='"+dia+"', `mes`='"+mes+"', `anio`='"+año+"', `obs`='"+otros+"' WHERE `idSol`='"+idSol+"';");
+                con.actualizar("UPDATE solicitudes SET codUsu = '"+cod+"', idSol = '"+idSol+"' WHERE codSol = '"+num_solicitud+"';");
+                JOptionPane.showMessageDialog(rootPane, "Datos Modificados Satisfactotiamente");
+                //con.cierraConexion();
+
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(rootPane, "Error Cambiando datos. " + e);
+            }
+        }
+        this.btnCambiarDatos.setVisible(false);
+        this.btnGuardar.setEnabled(false);
+        this.btnImprimir.setEnabled(true);
   
     }//GEN-LAST:event_btnCambiarDatosActionPerformed
 
     private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
-        String num_sol = txtSolicitud.getText();
+          String num_sol = txtSolicitud.getText();
         jasper.ejecutarReporte(num_sol);
     }//GEN-LAST:event_btnImprimirActionPerformed
 

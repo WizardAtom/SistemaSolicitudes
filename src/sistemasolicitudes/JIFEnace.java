@@ -265,7 +265,7 @@ private static final long serialVersionUID = 1L;
 
         tabbedPaneHeader1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        btnVer.setBackground(new java.awt.Color(0, 152, 76));
+        btnVer.setBackground(new java.awt.Color(1, 1, 1));
         btnVer.setText("Visualizar Solicitud");
         btnVer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -273,8 +273,8 @@ private static final long serialVersionUID = 1L;
             }
         });
 
-        BtnRImprimir.setBackground(new java.awt.Color(0, 152, 76));
-        BtnRImprimir.setText("Re-Imprimir Solicitud");
+        BtnRImprimir.setBackground(new java.awt.Color(1, 1, 1));
+        BtnRImprimir.setText("Re-Imprimir");
         BtnRImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnRImprimirActionPerformed(evt);
@@ -584,7 +584,7 @@ private static final long serialVersionUID = 1L;
 
         tabbedPaneHeader3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        btnGuardar.setBackground(new java.awt.Color(255, 197, 0));
+        btnGuardar.setBackground(new java.awt.Color(255, 0, 0));
         btnGuardar.setText("Guardar Datos");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -592,7 +592,7 @@ private static final long serialVersionUID = 1L;
             }
         });
 
-        btnImprimir.setBackground(new java.awt.Color(255, 197, 0));
+        btnImprimir.setBackground(new java.awt.Color(255, 0, 0));
         btnImprimir.setText("Imprimir");
         btnImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -600,7 +600,7 @@ private static final long serialVersionUID = 1L;
             }
         });
 
-        btnCancelar.setBackground(new java.awt.Color(255, 0, 0));
+        btnCancelar.setBackground(new java.awt.Color(171, 167, 67));
         btnCancelar.setText("Cancelar");
 
         btnChangeDat.setBackground(new java.awt.Color(1, 1, 1));

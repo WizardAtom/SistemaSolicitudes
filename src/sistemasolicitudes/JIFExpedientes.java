@@ -648,7 +648,8 @@ conexion con = new conexion();
 
         tabbedPaneHeader2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        btnGuardar.setBackground(new java.awt.Color(255, 197, 0));
+        btnGuardar.setBackground(new java.awt.Color(255, 0, 0));
+        btnGuardar.setBorder(null);
         btnGuardar.setText("Guardar Datos");
         btnGuardar.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -665,7 +666,8 @@ conexion con = new conexion();
             }
         });
 
-        btnImprimir.setBackground(new java.awt.Color(255, 197, 0));
+        btnImprimir.setBackground(new java.awt.Color(255, 0, 0));
+        btnImprimir.setBorder(null);
         btnImprimir.setText("Imprimir");
         btnImprimir.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         btnImprimir.addActionListener(new java.awt.event.ActionListener() {
@@ -674,7 +676,7 @@ conexion con = new conexion();
             }
         });
 
-        btnCancelar.setBackground(new java.awt.Color(255, 0, 0));
+        btnCancelar.setBackground(new java.awt.Color(228, 200, 106));
         btnCancelar.setText("Cancelar");
         btnCancelar.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -902,7 +904,7 @@ conexion con = new conexion();
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void btnVisulaizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisulaizarActionPerformed
-        ver_solicitud = JOptionPane.showInputDialog("Ingrese Numero de Solicitud a visualizar");
+           ver_solicitud = JOptionPane.showInputDialog("Ingrese Numero de Solicitud a visualizar");
 
         this.txtNumDoc.setEditable(true);
         this.btnUsu.setEnabled(true);
@@ -943,7 +945,7 @@ conexion con = new conexion();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-         cod = lblCod.getText();
+        cod = lblCod.getText();
         idsol =Integer.parseInt(lblIdSol.getText());
         int codTipSol=3;
         //
@@ -979,7 +981,7 @@ conexion con = new conexion();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnCambiarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarDatosActionPerformed
-                cod = this.lblCod.getText();   //Codigo del usuario
+        cod = this.lblCod.getText();   //Codigo del usuario
         idsol =Integer.parseInt(this.LabelIdSol.getText());   //
 
         num_solicitud = this.txtSolicitud.getText();

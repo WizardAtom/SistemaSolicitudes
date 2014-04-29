@@ -43,7 +43,10 @@ notarios2 nt2 = new notarios2();
 //        this.txtCodNot.setVisible(false);
 //        this.btnChangeDat.setVisible(false);
 //        this.labelIdSol.setVisible(false);
-        desactiva();
+        actualizar_Tabla();
+       desactiva();
+       sizeTabla();
+        
         int solic=0,esc=0;
         try{
                 con.conectar();
@@ -250,7 +253,7 @@ notarios2 nt2 = new notarios2();
         labelIdSol.setForeground(new java.awt.Color(255, 255, 255));
         labelIdSol.setText("labelIdSol");
 
-        buttonColoredAction1.setBackground(new java.awt.Color(43, 137, 182));
+        buttonColoredAction1.setBackground(new java.awt.Color(0, 172, 255));
         buttonColoredAction1.setText("Nuevo");
         buttonColoredAction1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         buttonColoredAction1.setMaximumSize(new java.awt.Dimension(175, 45));
@@ -330,7 +333,7 @@ notarios2 nt2 = new notarios2();
 
         tabbedPaneHeader2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        btnGuardar.setBackground(new java.awt.Color(255, 197, 0));
+        btnGuardar.setBackground(new java.awt.Color(255, 0, 0));
         btnGuardar.setText("Guardar Datos");
         btnGuardar.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -347,7 +350,7 @@ notarios2 nt2 = new notarios2();
             }
         });
 
-        btnImprimir.setBackground(new java.awt.Color(255, 197, 0));
+        btnImprimir.setBackground(new java.awt.Color(255, 0, 0));
         btnImprimir.setText("Imprimir");
         btnImprimir.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         btnImprimir.addActionListener(new java.awt.event.ActionListener() {
@@ -356,7 +359,7 @@ notarios2 nt2 = new notarios2();
             }
         });
 
-        btnCancelar.setBackground(new java.awt.Color(255, 0, 0));
+        btnCancelar.setBackground(new java.awt.Color(226, 218, 128));
         btnCancelar.setText("Cancelar");
         btnCancelar.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {

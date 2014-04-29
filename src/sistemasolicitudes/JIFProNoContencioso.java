@@ -560,7 +560,7 @@ public class JIFProNoContencioso extends javax.swing.JInternalFrame {
 
         tabbedPaneHeader1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        btnVisualizar.setBackground(new java.awt.Color(0, 152, 76));
+        btnVisualizar.setBackground(new java.awt.Color(0, 0, 0));
         btnVisualizar.setText("Visualizar Proceso");
         btnVisualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -568,7 +568,7 @@ public class JIFProNoContencioso extends javax.swing.JInternalFrame {
             }
         });
 
-        BtnRImprimir.setBackground(new java.awt.Color(0, 152, 76));
+        BtnRImprimir.setBackground(new java.awt.Color(0, 0, 0));
         BtnRImprimir.setText("Re-Imprimir");
         BtnRImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -619,7 +619,7 @@ public class JIFProNoContencioso extends javax.swing.JInternalFrame {
 
         tabbedPaneHeader3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        btnGuardar.setBackground(new java.awt.Color(255, 197, 0));
+        btnGuardar.setBackground(new java.awt.Color(0, 255, 44));
         btnGuardar.setText("Guardar Datos");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -627,7 +627,7 @@ public class JIFProNoContencioso extends javax.swing.JInternalFrame {
             }
         });
 
-        btnImprimir.setBackground(new java.awt.Color(255, 197, 0));
+        btnImprimir.setBackground(new java.awt.Color(0, 255, 44));
         btnImprimir.setText("Imprimir");
         btnImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -635,7 +635,7 @@ public class JIFProNoContencioso extends javax.swing.JInternalFrame {
             }
         });
 
-        btnCancelar.setBackground(new java.awt.Color(255, 0, 0));
+        btnCancelar.setBackground(new java.awt.Color(244, 220, 106));
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

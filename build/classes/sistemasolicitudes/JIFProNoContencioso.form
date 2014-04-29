@@ -901,7 +901,7 @@
                 <Component class="org.edisoncor.gui.button.ButtonColoredAction" name="btnVisualizar">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="4c" green="98" red="0" type="rgb"/>
+                      <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Visualizar Proceso"/>
                   </Properties>
@@ -912,7 +912,7 @@
                 <Component class="org.edisoncor.gui.button.ButtonColoredAction" name="BtnRImprimir">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="4c" green="98" red="0" type="rgb"/>
+                      <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Re-Imprimir"/>
                   </Properties>
@@ -1005,7 +1005,7 @@
                 <Component class="org.edisoncor.gui.button.ButtonColoredAction" name="btnGuardar">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="c5" red="ff" type="rgb"/>
+                      <Color blue="2c" green="ff" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Guardar Datos"/>
                   </Properties>
@@ -1016,7 +1016,7 @@
                 <Component class="org.edisoncor.gui.button.ButtonColoredAction" name="btnImprimir">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="c5" red="ff" type="rgb"/>
+                      <Color blue="2c" green="ff" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Imprimir"/>
                   </Properties>
@@ -1027,7 +1027,7 @@
                 <Component class="org.edisoncor.gui.button.ButtonColoredAction" name="btnCancelar">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="ff" type="rgb"/>
+                      <Color blue="6a" green="dc" red="f4" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
                   </Properties>
