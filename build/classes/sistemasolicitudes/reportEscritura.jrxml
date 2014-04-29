@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="567" leftMargin="28" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.2396694214876054"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="405"/>
+	<subDataset name="New Dataset 1">
+		<queryString language="SQL">
+			<![CDATA[SELECT s.codSol, CONCAT(u.nombre,' ',u.apePat,' ',u.apeMat)AS usuario, u.codDis,u.numDoc, u.direccion,
+e.tipEsc,e.otorgante,e.favorecido, CONCAT(n.nom_not,' ',n.pat_not,' ',n.mat_not) AS notario, n.provincia, e.dia, e.mes, e.anio, e.obs
+FROM solicitudes AS s, usuarios AS u, escpublicas AS e, notarios AS n
+WHERE s.codUsu = u.codUsu  AND
+      s.idSol=e.idSol AND
+      e.codNot=n.cod_not;]]>
+		</queryString>
+		<field name="codSol" class="java.lang.Integer"/>
+		<field name="usuario" class="java.lang.String"/>
+		<field name="codDis" class="java.lang.String"/>
+		<field name="numDoc" class="java.lang.String"/>
+		<field name="direccion" class="java.lang.String"/>
+		<field name="tipEsc" class="java.lang.String"/>
+		<field name="otorgante" class="java.lang.String"/>
+		<field name="favorecido" class="java.lang.String"/>
+		<field name="notario" class="java.lang.String"/>
+		<field name="provincia" class="java.lang.String"/>
+		<field name="dia" class="java.lang.String"/>
+		<field name="mes" class="java.lang.String"/>
+		<field name="anio" class="java.lang.String"/>
+		<field name="obs" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="solicitud" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT s.codSol, CONCAT(u.nombre,' ',u.apePat,' ',u.apeMat)AS usuario, u.codDis,u.numDoc, u.direccion,
+e.tipEsc,e.otorgante,e.favorecido, CONCAT(n.nom_not,' ',n.pat_not,' ',n.mat_not) AS notario, n.provincia, e.dia, e.mes, e.anio, e.obs
+FROM solicitudes AS s, usuarios AS u, escpublicas AS e, notarios AS n
+WHERE s.codUsu = u.codUsu  AND
+      s.idSol=e.idSol AND
+      e.codNot=n.cod_not AND
+      s.codSol = $P{solicitud};]]>
+	</queryString>
+	<field name="codSol" class="java.lang.Integer"/>
+	<field name="usuario" class="java.lang.String"/>
+	<field name="codDis" class="java.lang.String"/>
+	<field name="numDoc" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="tipEsc" class="java.lang.String"/>
+	<field name="otorgante" class="java.lang.String"/>
+	<field name="favorecido" class="java.lang.String"/>
+	<field name="notario" class="java.lang.String"/>
+	<field name="provincia" class="java.lang.String"/>
+	<field name="dia" class="java.lang.String"/>
+	<field name="mes" class="java.lang.String"/>
+	<field name="anio" class="java.lang.String"/>
+	<field name="obs" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="103" splitType="Stretch">
+			<staticText>
+				<reportElement x="104" y="63" width="219" height="18"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ARCHIVO GENERAL DE LA NACION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="80" width="171" height="16"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ARCHIVO REGIONAL DE PUNO]]></text>
+			</staticText>
+			<textField pattern="EEE, d MMM yyyy HH:mm:ss">
+				<reportElement x="390" y="76" width="131" height="17"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="455" splitType="Prevent">
+			<rectangle>
+				<reportElement x="382" y="105" width="28" height="24"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="70" y="137" width="146" height="13"/>
+				<textElement/>
+				<text><![CDATA[DATOS DEL DOCUMENTO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="71" y="151" width="169" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="70" y="160" width="77" height="20"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<text><![CDATA[Escritura Pública:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="182" width="77" height="20"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<text><![CDATA[Otorgado por :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="72" y="222" width="77" height="20"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<text><![CDATA[A Favor de :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="259" width="77" height="20"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<text><![CDATA[Notario Público :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="281" width="77" height="20"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<text><![CDATA[Lugar y Fecha :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="71" y="299" width="77" height="20"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<text><![CDATA[MAS DATOS :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="160" width="375" height="20"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tipEsc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="182" width="375" height="40"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{otorgante}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="222" width="375" height="37"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{favorecido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="259" width="375" height="20"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{notario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="280" width="100" height="20"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{provincia}+", "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="151" y="328" width="100" height="14"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<text><![CDATA[POR LO TANTO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="152" y="344" width="264" height="14"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<text><![CDATA[Ruego a Usted acceder a mi solicitud por ser justa y legal.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="198" y="415" width="170" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="221" y="418" width="125" height="14"/>
+				<textElement/>
+				<text><![CDATA[FIRMA DEL SOLICITANTE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="149" y="300" width="375" height="28"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{obs}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="216" y="356" width="166" height="20"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="188" y="356" width="27" height="20"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<text><![CDATA[Puno,]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="73" y="25" width="450" height="40"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["                Yo, 	"+$F{usuario}+" natural de "+$F{codDis}+ " identificado con D.N.I. N° " + $F{numDoc}+ " y con domicilio en " + $F{direccion} + "  del distrito " + $F{codDis} + ", ante Usted con el debido respeto me presento y expongo: "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="73" y="66" width="450" height="28"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<text><![CDATA[                 Que amparado en los Dispositivos Legales Vigentes, Solicito se me expida el documento de acuerdo al siguiente detalle:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="71" y="-2" width="451" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="445" y="2" width="89" height="22"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{codSol}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="371" y="4" width="76" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[N° SOLICITUD :                                         ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="499" y="4" width="37" height="20"/>
+				<textElement/>
+				<text><![CDATA[- 2013]]></text>
+			</staticText>
+			<line>
+				<reportElement x="82" y="454" width="439" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="249" y="279" width="42" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="308" y="279" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="407" y="279" width="74" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{anio}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="414" y="128" width="122" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="381" y="90" width="155" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Otros:Exhibicion, Constancia]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="282" y="105" width="28" height="24"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="75" y="104" width="28" height="24"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="110" y="118" width="13" height="10"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="201" y="119" width="13" height="10"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="168" y="105" width="28" height="24"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="315" y="119" width="13" height="10"/>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="107" y="105" width="56" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ Testimonio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="313" y="105" width="55" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ Copia simple]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="199" y="104" width="74" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ Copia Certificada]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Prevent"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="279" splitType="Stretch">
+			<staticText>
+				<reportElement x="98" y="108" width="104" height="16"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Derecho de N° de Copias]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="98" y="126" width="56" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Calificación]]></text>
+			</staticText>
+			<line>
+				<reportElement x="202" y="123" width="89" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="296" y="108" width="59" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[N° de Fojas]]></text>
+			</staticText>
+			<line>
+				<reportElement x="355" y="121" width="52" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="415" y="107" width="23" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[S/ - ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="439" y="120" width="76" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="416" y="127" width="23" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[S/ - ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="440" y="140" width="76" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="98" y="166" width="68" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Observaciones :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="155" y="140" width="253" height="1"/>
+			</line>
+			<line>
+				<reportElement x="440" y="160" width="76" height="1"/>
+			</line>
+			<line>
+				<reportElement x="167" y="179" width="349" height="1"/>
+			</line>
+			<line>
+				<reportElement x="101" y="193" width="415" height="1"/>
+			</line>
+			<line>
+				<reportElement x="100" y="210" width="416" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="98" y="147" width="75" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[N° de Fotocopias]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="416" y="147" width="23" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[S/ -]]></text>
+			</staticText>
+			<line>
+				<reportElement x="173" y="159" width="235" height="1"/>
+			</line>
+			<line>
+				<reportElement x="154" y="64" width="242" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="400" y="51" width="35" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+			<line>
+				<reportElement x="438" y="63" width="76" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="98" y="70" width="65" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Calificado por:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="164" y="83" width="231" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="400" y="70" width="35" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+			<line>
+				<reportElement x="438" y="82" width="76" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="98" y="89" width="80" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Fotocopiado por:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="179" y="102" width="217" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="400" y="89" width="35" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+			<line>
+				<reportElement x="438" y="101" width="76" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="98" y="53" width="57" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Buscado por:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="219" width="167" height="20"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Puno, _____ de ______________  2013]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="98" y="37" width="54" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Minutura N°]]></text>
+			</staticText>
+			<line>
+				<reportElement x="154" y="47" width="95" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="257" y="37" width="49" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Folios del]]></text>
+			</staticText>
+			<line>
+				<reportElement x="313" y="46" width="83" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="400" y="37" width="20" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Al]]></text>
+			</staticText>
+			<line>
+				<reportElement x="432" y="44" width="82" height="1"/>
+			</line>
+			<line>
+				<reportElement x="154" y="31" width="95" height="1"/>
+			</line>
+			<line>
+				<reportElement x="313" y="31" width="83" height="1"/>
+			</line>
+			<line>
+				<reportElement x="432" y="30" width="82" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="98" y="19" width="50" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Escritura N°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="18" width="49" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Folios del]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="19" width="20" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Al]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="98" y="3" width="49" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Protocolo]]></text>
+			</staticText>
+			<line>
+				<reportElement x="153" y="15" width="96" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="257" y="3" width="59" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Registro N°]]></text>
+			</staticText>
+			<line>
+				<reportElement x="318" y="14" width="76" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="400" y="2" width="51" height="14"/>
+				<textElement>
+					<font fontName="Serif" pdfFontName="Courier"/>
+				</textElement>
+				<text><![CDATA[Legajo N°]]></text>
+			</staticText>
+			<line>
+				<reportElement x="454" y="14" width="60" height="1"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
